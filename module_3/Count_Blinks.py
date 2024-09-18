@@ -113,13 +113,13 @@ def detect_blinks():
 
             # Display the blink count on the frame
             cv2.putText(frame, "Blinks: {}".format(totalBlinks), (10, 30),
-                        cv2.FONT_HERSHEY_SIMPLEX, 0.7, (0, 0, 255), 2)
+                        cv2.FONT_HERSHEY_SIMPLEX, 0.7, (0, 255, 0), 2)
 
         # Display the video stream with the drawn convex hulls and blink count
         cv2.imshow('Video Stream', frame)
 
-        # Break the loop if 'q' key is pressed
-        if cv2.waitKey(1) & 0xFF == ord('q'):
+        # Break the loop if 'Esc' key is pressed (key code 27 is for Esc)
+        if cv2.waitKey(1) & 0xFF == 27:
             break
 
     # Release the video stream and close windows
